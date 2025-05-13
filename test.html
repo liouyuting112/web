@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>穿戴甲品牌</title>
+    <style>
+        /* 設定全頁的樣式 */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(to bottom right, #ff7f50, #ff1493); /* 漸層背景 */
+            color: white;
+        }
+
+        /* 頁面內容滾動 */
+        .content {
+            height: 2000px; /* 使頁面高度足夠以便測試滾動 */
+            padding: 20px;
+        }
+
+        /* 購物車按鈕 */
+        .cart-button {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #ff6347;
+            padding: 10px 20px;
+            color: white;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        /* 購物車頁面（隱藏，將在點擊後顯示） */
+        .cart-page {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .cart-page h2 {
+            margin-top: 0;
+        }
+
+        .cart-page .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: #ff6347;
+            border: none;
+            padding: 5px 10px;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 內容區域 -->
+    <div class="content">
+        <h1>歡迎來到穿戴甲品牌</h1>
+        <p>這是一個測試頁面，讓我們試試看滾動效果！</p>
+        <p>請滾動看看效果！</p>
+    </div>
+
+    <!-- 購物車按鈕 -->
+    <button class="cart-button" onclick="showCartPage()">查看購物車</button>
+
+    <!-- 購物車頁面 -->
+    <div class="cart-page" id="cartPage">
+        <button class="close-btn" onclick="closeCartPage()">關閉購物車</button>
+        <h2>購物車內容</h2>
+        <p>你的購物車目前沒有任何商品。</p>
+    </div>
+
+    <script>
+        // 顯示購物車頁面
+        function showCartPage() {
+            document.getElementById('cartPage').style.display = 'block';
+        }
+
+        // 關閉購物車頁面
+        function closeCartPage() {
+            document.getElementById('cartPage').style.display = 'none';
+        }
+    </script>
+</body>
+</html>
